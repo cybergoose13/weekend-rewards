@@ -1,0 +1,6 @@
+name: Weekend Rewards
+version: ${project.version}
+main: me.cybergoose.weekendrewards.WeekendRewards
+api-version: 1.16
+authors: [ Cybergoose ]
+description: Weekend Rewards gives players different rewards and double XP on weekends.
