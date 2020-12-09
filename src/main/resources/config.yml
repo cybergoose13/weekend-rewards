@@ -1,3 +1,12 @@
 # TITLE:  Weekend Rewards
 # Ver:    SNAP-1.0
 # AUTHOR: CyberGoose
+
+Days:
+  sunday: True
+  monday: false
+  tuesday: false
+  wednesday: false
+  thursday: false
+  friday: false
+  saturday: true

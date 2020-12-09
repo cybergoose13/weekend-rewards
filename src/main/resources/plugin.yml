@@ -1,4 +1,4 @@
-name: Weekend Rewards
+name: WeekendRewards
 version: ${project.version}
 main: me.cybergoose.weekendrewards.WeekendRewards
 api-version: 1.16

@@ -17,6 +17,7 @@ public final class WeekendRewards extends JavaPlugin {
     @Override
     public void onEnable() {
         loadConfig();
+        this.getServer().getPluginManager().registerEvents(new Reward(), this);
         CONSOLESENDER.sendMessage(ChatColor.GREEN + this.getName() + " is enabled.");
     }
 
