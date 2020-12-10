@@ -3,7 +3,7 @@
 # AUTHOR: CyberGoose
 
 Days:
-  sunday: True
+  sunday: true
   monday: false
   tuesday: false
   wednesday: false
