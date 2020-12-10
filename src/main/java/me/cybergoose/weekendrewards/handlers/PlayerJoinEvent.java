@@ -1,3 +1,10 @@
+/*  Title:      Weekend Rewards
+ *   Author:     CyberGoose
+ *   Start:      10-12-20
+ *   Update:     10-12-20
+ *   Version:    1.0
+ * */
+
 package me.cybergoose.weekendrewards.handlers;
 
 import me.cybergoose.weekendrewards.interfaces.RewardInterface;

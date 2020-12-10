@@ -2,7 +2,7 @@
  *   Author:     CyberGoose
  *   Start:      7-12-20
  *   Update:     10-12-20
- *   Version:    Snap-1.0
+ *   Version:    1.0
  * */
 
 package me.cybergoose.weekendrewards.handlers;
