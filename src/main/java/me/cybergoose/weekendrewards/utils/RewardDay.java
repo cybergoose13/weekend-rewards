@@ -10,33 +10,33 @@ public class RewardDay implements RewardInterface {
     public boolean getDay(){
 
         FileConfiguration config= PLUGIN.getConfig();
-        boolean isRewardDay;
+        boolean isRewardDay= false;
+
 
         switch (Calendar.getInstance().getTime().getDay()){
             case 0:
-                isRewardDay= config.getBoolean("sunday");
+                isRewardDay= config.getBoolean("days.sunday");
                 break;
             case 1:
-                isRewardDay= config.getBoolean("monday");
+                isRewardDay= config.getBoolean("days.monday");
                 break;
             case 2:
-                isRewardDay= config.getBoolean("tuesday");
+                isRewardDay= config.getBoolean("days.tuesday");
                 break;
             case 3:
-                isRewardDay= config.getBoolean("wednesday");
+                isRewardDay= config.getBoolean("days.wednesday");
                 break;
             case 4:
-                isRewardDay= config.getBoolean("thursday");
+                isRewardDay= config.getBoolean("days.thursday");
                 break;
             case 5:
-                isRewardDay= config.getBoolean("friday");
+                isRewardDay= config.getBoolean("days.friday");
                 break;
             case 6:
-                isRewardDay= config.getBoolean("saturday");
+                isRewardDay= config.getBoolean("days.saturday");
                 break;
             default: PLUGIN.getServer().getConsoleSender()
                     .sendMessage("Day could not be found in Weekend Reward");
-                isRewardDay= false;
         }
         return isRewardDay;
     }

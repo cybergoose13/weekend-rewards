@@ -2,7 +2,7 @@
 # Ver:    SNAP-1.0
 # AUTHOR: CyberGoose
 
-Days:
+days:
   sunday: true
   monday: false
   tuesday: false
@@ -10,3 +10,5 @@ Days:
   thursday: false
   friday: false
   saturday: true
+
+multiplier: 2
