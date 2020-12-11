@@ -2,7 +2,6 @@
  *   Author:     CyberGoose
  *   Start:      7-12-20
  *   Update:     10-12-20
- *   Version:    1.0
  * */
 
 package me.cybergoose.weekendrewards.handlers;
@@ -29,11 +28,22 @@ public class EntityExpDropEvent implements Listener, RewardInterface {
 
         entityDeathEvent.setDroppedExp(entityDeathEvent.getDroppedExp()
                 * PLUGIN.getConfig().getInt("multiplier"));
-        Player player= entityDeathEvent.getEntity().getKiller();
 
+        PLUGIN.getServer().getConsoleSender()
+                .sendMessage(entityDeathEvent.getEntity().getName() +
+                        " dropped " + entityDeathEvent.getDroppedExp() + "xp");
+
+
+        /*
+        *   player and collections are not used.. held here for possible implementation in the future.
+        */
+        Player player= entityDeathEvent.getEntity().getKiller();
         Collection<ItemStack> items= entityDeathEvent.getDrops();
-        if(new Random().nextInt(11) > 8){
-            entityDeathEvent.getDrops().add(new ItemStack(Material.DIAMOND));
+
+        if(new Random().nextInt(10 + 1) > 9){
+            ItemStack dropItem = new Random().nextInt( 1 + 1) == 1 ?
+                    new ItemStack(Material.DIAMOND) : new ItemStack(Material.EMERALD);
+            entityDeathEvent.getDrops().add(dropItem);
         }
     }
 }

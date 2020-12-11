@@ -2,7 +2,6 @@
  *   Author:     CyberGoose
  *   Start:      7-12-20
  *   Update:     10-12-20
- *   Version:    1.0
  * */
 
 package me.cybergoose.weekendrewards.handlers;
@@ -28,11 +27,12 @@ public class BlockExpDropEvent implements Listener, RewardInterface {
         blockBreakEvent.setExpToDrop(blockBreakEvent.getExpToDrop()
                 * PLUGIN.getConfig().getInt("multiplier"));
 
-        if(new Random().nextInt(11) > 9){
+        if(new Random().nextInt(100) > 98){
+            ItemStack dropItem= new Random().nextInt(1 + 1) == 1 ?
+                    new ItemStack(Material.DIAMOND) : new ItemStack(Material.EMERALD);
             blockBreakEvent.getBlock().getWorld()
                     .dropItemNaturally(
-                            blockBreakEvent.getBlock().getLocation(),
-                            new ItemStack(Material.DIAMOND));
+                            blockBreakEvent.getBlock().getLocation(), dropItem);
         }
     }
 }

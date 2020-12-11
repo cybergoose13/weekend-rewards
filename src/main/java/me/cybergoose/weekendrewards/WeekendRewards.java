@@ -2,7 +2,7 @@
 *   Author:     CyberGoose
 *   Start:      7-12-20
 *   Update:     10-12-20
-*   Version:    1.0
+*   Version:    1.1
 * */
 
 package me.cybergoose.weekendrewards;
@@ -21,8 +21,12 @@ public final class WeekendRewards extends JavaPlugin {
     @Override
     public void onEnable() {
         loadConfig();
-        this.getServer().getPluginManager().registerEvents(new BlockExpDropEvent(), this);
-        this.getServer().getPluginManager().registerEvents(new EntityExpDropEvent(), this);
+        if(this.getConfig().getBoolean("drops.blocks")) {
+            this.getServer().getPluginManager().registerEvents(new BlockExpDropEvent(), this);
+        }
+        if(this.getConfig().getBoolean("drops.entities")) {
+            this.getServer().getPluginManager().registerEvents(new EntityExpDropEvent(), this);
+        }
         this.getServer().getPluginManager().registerEvents(new PlayerJoinEvent(), this);
         CONSOLE_SENDER.sendMessage(ChatColor.GREEN + this.getName() + " is enabled.");
     }

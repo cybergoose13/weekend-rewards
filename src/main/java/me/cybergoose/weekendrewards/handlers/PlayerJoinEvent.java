@@ -2,7 +2,6 @@
  *   Author:     CyberGoose
  *   Start:      10-12-20
  *   Update:     10-12-20
- *   Version:    1.0
  * */
 
 package me.cybergoose.weekendrewards.handlers;
@@ -22,7 +21,7 @@ public class PlayerJoinEvent implements Listener, RewardInterface {
             Player player= playerJoinEvent.getPlayer();
             player.sendMessage(ChatColor
                     .translateAlternateColorCodes('&',
-                            "&aXP &7and &bDiamond &dDrops"));
+                            "&eXP &7and &bDiamond &7or &aEmerald &dDrops"));
         }
     }
 }

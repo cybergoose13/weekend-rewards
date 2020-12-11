@@ -1,7 +1,8 @@
 # TITLE:  Weekend Rewards
-# Ver:    1.0
+# Ver:    1.1
 # AUTHOR: CyberGoose
 
+# Set the days you want to give more experience to true
 days:
   sunday: true
   monday: false
@@ -11,4 +12,12 @@ days:
   friday: false
   saturday: true
 
+# Set the multiplier to a integer to multiply the experience dropped
+#                           (ex: coal drops 2xp.. coal now drops 4xp)
 multiplier: 2
+
+# Set drops.blocks or drops.entities to true to allow xp multiplier and special
+#   drops to affect block break or entity kills
+drops:
+  blocks: true
+  entities: true
