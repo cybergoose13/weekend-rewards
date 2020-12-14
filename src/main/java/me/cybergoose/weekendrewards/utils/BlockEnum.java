@@ -15,6 +15,7 @@ import org.bukkit.Material;
 
 public enum BlockEnum {
     GRASS(Material.GRASS),
+    GRASSBLOCK(Material.GRASS_BLOCK),
     STONE(Material.STONE);
 
     private final Material type;

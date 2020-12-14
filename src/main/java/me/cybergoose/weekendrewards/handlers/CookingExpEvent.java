@@ -21,9 +21,5 @@ public class CookingExpEvent implements Listener, RewardInterface {
         furnaceExtractEvent.setExpToDrop(
                 (int) Math.round(furnaceExtractEvent.getExpToDrop() *
                         PLUGIN.getConfig().getDouble("multiplier")));
-
-        furnaceExtractEvent.getPlayer().sendMessage(
-                "xp: " + furnaceExtractEvent.getExpToDrop() *
-                        PLUGIN.getConfig().getDouble("multiplier"));
     }
 }

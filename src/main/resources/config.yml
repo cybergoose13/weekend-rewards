@@ -18,9 +18,10 @@ days:
   friday: false
   saturday: true
 
-multiplier: 2
+multiplier: 2.0
 
 drops:
   blocks: true
   entities: true
   cooking: true
+  breeding: true

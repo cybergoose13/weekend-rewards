@@ -33,7 +33,6 @@ public class EntityExpDropEvent implements Listener, RewardInterface {
                 .sendMessage(entityDeathEvent.getEntity().getName() +
                         " dropped " + entityDeathEvent.getDroppedExp() + "xp");
 
-
         /*
         *   player and collections are not used.. held here for possible implementation in the future.
         */

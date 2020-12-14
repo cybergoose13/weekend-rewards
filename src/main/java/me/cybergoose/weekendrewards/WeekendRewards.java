@@ -29,6 +29,9 @@ public final class WeekendRewards extends JavaPlugin {
         if(this.getConfig().getBoolean("drops.cooking")){
             this.getServer().getPluginManager().registerEvents(new CookingExpEvent(), this);
         }
+        if(this.getConfig().getBoolean("drops.breeding")){
+            this.getServer().getPluginManager().registerEvents(new BreedExpDropEvent(), this);
+        }
         this.getServer().getPluginManager().registerEvents(new PlayerJoinEvent(), this);
         CONSOLE_SENDER.sendMessage(ChatColor.GREEN + this.getName() + " is enabled.");
     }
