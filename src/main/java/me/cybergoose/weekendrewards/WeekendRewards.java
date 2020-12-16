@@ -2,7 +2,7 @@
 *   Author:     CyberGoose
 *   Start:      7-12-20
 *   Update:     12-12-20
-*   Version:    1.2.0
+*   Version:    1.2.2
 * */
 
 package me.cybergoose.weekendrewards;

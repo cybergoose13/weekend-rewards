@@ -1,7 +1,7 @@
 /*  Title:      Weekend Rewards
  *   Author:     CyberGoose
  *   Start:      10-12-20
- *   Update:     10-12-20
+ *   Update:     15-12-20
  * */
 
 package me.cybergoose.weekendrewards.handlers;
@@ -17,6 +17,7 @@ public class PlayerJoinEvent implements Listener, RewardInterface {
 
     @EventHandler
     public void PlayerJoin(org.bukkit.event.player.PlayerJoinEvent playerJoinEvent){
+        PLUGIN.getServer().getConsoleSender().sendMessage("Today is: " + new RewardDay().getDay() );
         if(new RewardDay().getDay()){
             Player player= playerJoinEvent.getPlayer();
             player.sendMessage(ChatColor

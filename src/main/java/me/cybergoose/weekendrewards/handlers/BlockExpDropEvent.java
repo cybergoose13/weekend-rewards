@@ -1,7 +1,7 @@
 /*  Title:      Weekend Rewards
  *   Author:     CyberGoose
  *   Start:      7-12-20
- *   Update:     10-12-20
+ *   Update:     15-12-20
  * */
 
 package me.cybergoose.weekendrewards.handlers;
@@ -53,6 +53,8 @@ public class BlockExpDropEvent implements Listener, RewardInterface {
         blockBreakEvent.setExpToDrop(
                 (int) Math.round(blockBreakEvent.getExpToDrop() *
                         PLUGIN.getConfig().getDouble("multiplier")));
+
+        if(blockBreakEvent.getBlock().getType() != Material.GRASS) return;
 
         if(new Random().nextInt(100) > 98){
             ItemStack dropItem= new Random().nextInt(1 + 1) == 1 ?
