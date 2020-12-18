@@ -54,7 +54,8 @@ public class BlockExpDropEvent implements Listener, RewardInterface {
                 (int) Math.round(blockBreakEvent.getExpToDrop() *
                         PLUGIN.getConfig().getDouble("multiplier")));
 
-        if(blockBreakEvent.getBlock().getType() != Material.GRASS) return;
+//        if(blockBreakEvent.getBlock().getType() != Material.GRASS) return;
+        if(blockBreakEvent.getExpToDrop() < 1) return;
 
         if(new Random().nextInt(100) > 98){
             ItemStack dropItem= new Random().nextInt(1 + 1) == 1 ?
