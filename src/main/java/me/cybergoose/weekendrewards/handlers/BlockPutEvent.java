@@ -7,6 +7,7 @@
 package me.cybergoose.weekendrewards.handlers;
 
 import me.cybergoose.weekendrewards.interfaces.RewardInterface;
+import me.cybergoose.weekendrewards.utils.RewardDay;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -17,6 +18,9 @@ public class BlockPutEvent implements Listener, RewardInterface {
 
     @EventHandler
     public void onBlockPutEvent(BlockPlaceEvent blockPlaceEvent){
+
+        if(!(RewardDay.getDay())) return;
+
         Player player= blockPlaceEvent.getPlayer();
         if(blockPlaceEvent.getBlock().getType() == Material.TORCH ||
                 blockPlaceEvent.getBlock().getType() == Material.SOUL_TORCH) return;

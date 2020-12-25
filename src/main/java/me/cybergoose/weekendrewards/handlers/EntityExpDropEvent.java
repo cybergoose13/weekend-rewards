@@ -23,7 +23,7 @@ public class EntityExpDropEvent implements Listener, RewardInterface {
     @SuppressWarnings("unused")
     @EventHandler
     public void EntityExpDrop(EntityDeathEvent entityDeathEvent){
-        if(!(new RewardDay().getDay())) return;
+        if(!(RewardDay.getDay())) return;
         if(entityDeathEvent.getEntity().getKiller() == null) return;
 
         entityDeathEvent.setDroppedExp(entityDeathEvent.getDroppedExp()

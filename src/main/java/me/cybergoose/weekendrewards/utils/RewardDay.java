@@ -13,12 +13,12 @@ import java.util.Calendar;
 
 public class RewardDay implements RewardInterface {
 
-    public boolean getDay(){
+    public static boolean getDay(){
 
         FileConfiguration config= PLUGIN.getConfig();
         boolean isRewardDay= false;
 
-
+        //noinspection deprecation
         switch (Calendar.getInstance().getTime().getDay()){
             case 0:
                 isRewardDay= config.getBoolean("days.sunday");

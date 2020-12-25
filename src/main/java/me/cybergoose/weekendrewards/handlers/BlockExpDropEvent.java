@@ -1,15 +1,17 @@
 /*  Title:      Weekend Rewards
  *   Author:     CyberGoose
  *   Start:      7-12-20
- *   Update:     15-12-20
+ *   Update:     24-12-20
  * */
 
 package me.cybergoose.weekendrewards.handlers;
 
 import me.cybergoose.weekendrewards.interfaces.RewardInterface;
+import me.cybergoose.weekendrewards.utils.BlockEnum;
 import me.cybergoose.weekendrewards.utils.RewardDay;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
+import org.bukkit.block.Block;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -23,16 +25,25 @@ import java.util.Random;
 
 public class BlockExpDropEvent implements Listener, RewardInterface {
 
-    private final int cooldowntime= 30;
     @SuppressWarnings("unused")
     @EventHandler
     public void BlockExpDrop(BlockBreakEvent blockBreakEvent){
-        if(!(new RewardDay().getDay())) return;
+
+        if(!(RewardDay.getDay())) return;
+        if(!BlockEnum.contains(blockBreakEvent.getBlock().getType())) return;
 
         Player player= blockBreakEvent.getPlayer();
 
+        Map<Enchantment, Integer> enchantmentIntegerMap=
+                blockBreakEvent.getPlayer().getInventory().getItemInMainHand().getEnchantments();
+
+        for (Enchantment enchantment : enchantmentIntegerMap.keySet()) {
+            if(enchantment == Enchantment.SILK_TOUCH) return;
+        }
+
         if(COOLDOWN.containsKey(player.getUniqueId())){
-            long secondsLeft= ((COOLDOWN.get(player.getUniqueId()) / 1000) + cooldowntime) -
+            int coolDownTime = 30;
+            long secondsLeft= ((COOLDOWN.get(player.getUniqueId()) / 1000) + coolDownTime) -
                     (System.currentTimeMillis() / 1000);
 
             if(secondsLeft > 0) {
@@ -42,20 +53,10 @@ public class BlockExpDropEvent implements Listener, RewardInterface {
             }
         }
 
-        Map<Enchantment, Integer> enchantmentIntegerMap=
-                blockBreakEvent.getPlayer().getInventory().getItemInMainHand().getEnchantments();
-
-        for (Enchantment enchantment : enchantmentIntegerMap.keySet()) {
-            if(enchantment == Enchantment.SILK_TOUCH) return;
-        }
-
         Collection<ItemStack> itemDrops= blockBreakEvent.getBlock().getDrops();
         blockBreakEvent.setExpToDrop(
                 (int) Math.round(blockBreakEvent.getExpToDrop() *
                         PLUGIN.getConfig().getDouble("multiplier")));
-
-//        if(blockBreakEvent.getBlock().getType() != Material.GRASS) return;
-        if(blockBreakEvent.getExpToDrop() < 1) return;
 
         if(new Random().nextInt(100) > 98){
             ItemStack dropItem= new Random().nextInt(1 + 1) == 1 ?
