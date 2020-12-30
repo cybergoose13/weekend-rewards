@@ -26,6 +26,8 @@ public enum BlockEnum {
     REDSTONE(Material.REDSTONE_ORE),
     LAPIS(Material.LAPIS_ORE),
     QUARTZ(Material.NETHER_QUARTZ_ORE),
+    GOLD(Material.NETHER_GOLD_ORE),
+    GILDED(Material.GILDED_BLACKSTONE),
     DIAMOND(Material.DIAMOND_ORE);
 
     private final Material type;

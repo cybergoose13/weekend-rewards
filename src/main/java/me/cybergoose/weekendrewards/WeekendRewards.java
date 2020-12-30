@@ -20,7 +20,7 @@ public final class WeekendRewards extends JavaPlugin {
     public void onEnable() {
         loadConfig();
         if(this.getConfig().getBoolean("drops.blocks")) {
-            this.getServer().getPluginManager().registerEvents(new BlockPutEvent(), this);
+//            this.getServer().getPluginManager().registerEvents(new BlockPutEvent(), this);
             this.getServer().getPluginManager().registerEvents(new BlockExpDropEvent(), this);
         }
         if(this.getConfig().getBoolean("drops.entities")) {
